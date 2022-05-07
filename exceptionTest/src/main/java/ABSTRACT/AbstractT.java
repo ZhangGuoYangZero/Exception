@@ -10,8 +10,12 @@ public abstract class AbstractT {
     public AbstractT(int i,String ss){
         this.i = i;
         this.s = ss;
-    }
+        //静态成员类可以重复声明
+        new AbstractT.aa();
+        new AbstractT.aa();
 
+    }
+    static  class aa{}
     //不包含抽象方法的抽象类
     public void show(){
         System.out.println(this.i + " " +this.s);
